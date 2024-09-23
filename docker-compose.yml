@@ -1,0 +1,47 @@
+version: '3.9'
+
+services:
+  
+  back_end:
+    build: 
+      context: ./Back-End
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+    - POSTGRES_PASSWORD=1234
+    - POSTGRES_USER="mahdi"
+    - POSTGRES_DB="bank"
+    ports:
+      - "4000:4000"
+    # healthcheck:
+    #     test: "mysqladmin ping -h localhost"
+    #     interval: 10s
+    #     timeout: 20s
+    #     retries: 10
+    #     start_period: 1s
+    volumes:
+      - ./Back-End:/app
+      
+  postgres:
+    build:
+      context: ./DataBase
+      dockerfile: Dockerfile
+    restart: always
+    volumes:
+      - ./DataBase:/app
+    # depends_on:
+    #       mysql:
+    #         condition: service_healthy
+    
+
+  front_end:
+    build:
+      context: ./Front-end
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - back_end
+    volumes:
+      - ./Front-end/src:/src
