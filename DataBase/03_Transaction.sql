@@ -23,7 +23,7 @@ CREATE OR REPLACE PROCEDURE insert_data_to_transact ()
 	BEGIN
 	
 			INSERT INTO transact VALUES (600 , '2022-01-28' , '09:12:00' , 90000 , 500 , 501 , 200 , '9000 toman rikhte shod be hesabe felani ... ') ,
-																 (601 , '2021-01-28' , '01:13:00' , 10000 , 500 , 502 , 201 , '1000 toman rikhte shod be hesabe felani ... ') ,
+																 (601 , '2021-01-28' , '01:13:00' , 	 , 500 , 502 , 201 , '1000 toman rikhte shod be hesabe felani ... ') ,
 																 (602 , '2020-01-28' , '02:12:00' , 1870000 , 500 , 510 , 206 , 'jj toman rikhte shod be hesabe felani ... ') ,
 																 (603 , '2022-01-28' , '09:14:00' , 1770000 , 501 , 502 , 208 , 'kk toman rikhte shod be hesabe felani ... ') ,
 																 (604 , '2022-01-28' , '06:17:00' , 5670000 , 501 , 509 , 207 , 'gg toman rikhte shod be hesabe felani ... ') ,
