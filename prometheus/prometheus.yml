@@ -1,0 +1,9 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'nodejs-app'
+    static_configs:
+      - targets: ['172.20.240.178:4000']
+  - job_name: 'postgres-exporter2'
+    static_configs:
+      - targets: ['172.20.240.178:9187'] # Service name and port
