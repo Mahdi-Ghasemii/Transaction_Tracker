@@ -7,3 +7,7 @@ scrape_configs:
   - job_name: 'postgres-exporter2'
     static_configs:
       - targets: ['172.20.240.178:9187'] # Service name and port
+
+
+# if you want to scrape a pod , change the configmap of prometheus server using this command : kubectl edit configmap prometheus-server
+# then forward prometheus on port 9090 and forward postgres-exporter on port 9187 and address 0.0.0.0 using this command : kubectl port-forward postgres-exporter 9187 --address 0.0.0.0
