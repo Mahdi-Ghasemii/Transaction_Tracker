@@ -5,7 +5,7 @@
    "main": "index.js",
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "HOST=0.0.0.0 nodemon index.js"
+      "start": "HOST=0.0.0.0 node index.js"
    },
    "keywords": [],
    "author": "",
